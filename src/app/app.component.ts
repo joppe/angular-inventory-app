@@ -6,7 +6,7 @@ import {Product} from './product.model';
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-    products: Product[];
+    public products: Product[];
 
     constructor() {
         this.products = [
@@ -34,7 +34,7 @@ export class AppComponent {
         ];
     }
 
-    onProductSelect(product: Product): void {
+    public onProductSelect(product: Product): void {
         console.log(product);
     }
 }

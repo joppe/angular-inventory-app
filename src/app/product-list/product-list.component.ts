@@ -6,9 +6,9 @@ import {Product} from '../product.model';
     templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
-    @Input() products: Product[];
+    @Input() public products: Product[];
 
-    @Output() selectProduct: EventEmitter<Product>;
+    @Output() public selectProduct: EventEmitter<Product>;
 
     private currentProduct: Product;
 
@@ -16,12 +16,12 @@ export class ProductListComponent {
         this.selectProduct = new EventEmitter();
     }
 
-    onProductSelect(product: Product): void {
+    public onProductSelect(product: Product): void {
         this.currentProduct = product;
         this.selectProduct.emit(product);
     }
 
-    isSelected(product: Product): boolean {
+    public isSelected(product: Product): boolean {
         if (!product || !this.currentProduct) {
             return false;
         }

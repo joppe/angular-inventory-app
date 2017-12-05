@@ -7,5 +7,19 @@
     <div class="description">
         <app-product-department [product]="product"></app-product-department>
     </div>
+    <div [style.backgroundColor]="count < 3 ? 'green' : 'red'">count {{ count }}</div>
+    <div [ngSwitch]="count" [style.font-size.px]="fontSize" [style.color]="color">
+        <p *ngSwitchCase="0">That is nothing</p>
+        <p *ngSwitchCase="1">Not much</p>
+        <p *ngSwitchCase="2">Better</p>
+        <p *ngSwitchDefault>Ok</p>
+    </div>
+    <div *ngFor="let l of list; let i = index">
+        <span>{{ i }}: {{ l }}</span>
+    </div>
+    <button (click)="increment()">Add</button>
+    <input type="number" #newFontSize>
+    <input type="string" #newColor>
+    <button (click)="applyStyles(newFontSize, newColor)">Set styles</button>
 </div>
 <app-price-display [price]="product.price"></app-price-display>

@@ -6,5 +6,5 @@ import {Product} from '../product.model';
     templateUrl: './product-department.component.html'
 })
 export class ProductDepartmentComponent {
-    @Input() product: Product;
+    @Input() public product: Product;
 }

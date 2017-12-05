@@ -8,5 +8,19 @@ import {Product} from '../product.model';
 export class ProductRowComponent {
     @Input() product: Product;
 
-    @HostBinding('attr.class') cssClass = 'item';
+    public count = 0;
+    public fontSize = 12;
+    public color = 'black';
+    public list: string[] = ['foo', 'bar'];
+
+    @HostBinding('attr.class') public cssClass = 'item';
+
+    public increment(): void {
+        this.count += 1;
+    }
+
+    public applyStyles(fontSize: HTMLInputElement, color: HTMLInputElement): void {
+        this.fontSize = parseInt(fontSize.value, 10);
+        this.color = color.value;
+    }
 }

@@ -8,9 +8,5 @@ import {Product} from '../product.model';
     `
 })
 export class ProductImageComponent {
-    @Input() product: Product;
-
-    constructor() {
-    }
-
+    @Input() public product: Product;
 }
